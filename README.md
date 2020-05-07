@@ -1,5 +1,6 @@
 # JavaScript - Events
 
+
 If you are unsure of what the outcome is supposed to be, you can always launch the solution to see what I did in the browser. This isn't cheating... unless you steal all of my wonderful design ideas!!! 😜
 
 ## Exercise 1.0 - Warm up
