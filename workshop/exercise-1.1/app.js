@@ -19,9 +19,12 @@
 // we need a timeout to change the winning = false after 1 second
 // we need an event listener that will show the message based on winnig variable
 
+let para = document.getElementById("result");
+// document.getElementById('result')
 let winning = true;
 let winningMessage = "You won";
 let losingMessage = "You lost";
+
 function changeUserlost() {
   winning = false;
 }
@@ -29,29 +32,13 @@ setTimeout(changeUserlost, 1000);
 
 function returnMessage() {
   if (winning === true) {
-    console.log(winningMessage);
+    para.innerText = winningMessage;
   } else {
-    console.log(losingMessage);
+    para.innerText = losingMessage;
   }
 }
 
 document.body.addEventListener("click", returnMessage);
 
-// document.getElementById("test").addEventListener("click", myFunc);
-
-// function myFunc() {
-//     setTimeout(function(){
-//       console.log("Hello");
-//     }, 6000);
-// }
-
-// document.body.addEventListener("click", function () {
-//     console.log("You won!");
-//     clearTimeout(timeOutId);
-//   });
-
-//   let timeOutId = setTimeout(function () {
-//     console.log("Try again");
-//   }, 3000 + Math.random() * 2000);
-// Math.random is a value  between 0 and 1. I chhose top value by choosing multiplier.
-// If I wanted 0 to 25 * 25)
+// let body = document.body.
+// body.addEventListener('click', returnMessage);

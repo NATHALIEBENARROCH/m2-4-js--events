@@ -11,4 +11,13 @@
 // OPTIONAL
 // Feel free to add some CSS to this once you're done
 // --------------------------------------------------
-ol;
+const body = document.getElementById("main");
+const event = document.getElementById("event");
+
+//defining click function
+function textAppears() {
+  event.innerText = "You Won";
+  // always remove the eventListener when you're done
+  body.removeEventListener("click", textAppears);
+}
+body.addEventListener("click", textAppears);

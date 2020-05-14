@@ -25,7 +25,7 @@ let displaySeconds = 0;
 let displayMinutes = 0;
 let displayHours = 0;
 
-//Define vars to hold INTERVAL FUNCTION?????
+//Define vars to with its initial value to be able to fill it in function
 let interval = null;
 
 //Define vars to hold stopwatch status
@@ -77,6 +77,7 @@ function stopWatch() {
 function startStop() {
   if (status === "stopped") {
     interval = window.setInterval(stopWatch, 1000);
+    //set interval tells function to use stopwatch (++ seconds above) and run every second
     document.getElementById("startStop").innerHTML = "Stop";
     status = "started";
   } else {

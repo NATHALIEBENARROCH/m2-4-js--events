@@ -21,14 +21,19 @@
 // Stretch goal
 // Make the countdown live (show a countdown that updates several times a
 // second)
+let result = document.getElementById("result");
+let time = document.getElementById("time");
+let timeOut = 3000 + Math.random() * 2000;
+
+time.innerText = timeOut;
 
 document.body.addEventListener("click", function () {
-  console.log("You won!");
+  result.innerText = "You won!";
   clearTimeout(timeOutId);
 });
 
 let timeOutId = setTimeout(function () {
-  console.log("Try again");
-}, 3000 + Math.random() * 2000);
+  result.innerText = "Try again!";
+}, timeOut);
 // Math.random is a value  between 0 and 1. I chhose top value by choosing multiplier.
 // If I wanted 0 to 25 * 25)

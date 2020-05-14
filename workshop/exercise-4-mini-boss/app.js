@@ -1,5 +1,5 @@
 //SOLUTION
-const { body } = document;
+const body = document.body;
 const startButton = document.getElementById("start-button");
 const timer = document.getElementById("timer");
 const gameBoard = document.getElementById("board");
@@ -11,8 +11,9 @@ const gameButtons = Math.floor(Math.random() * 10) + 1;
 const gameTime = 5000; // in miliseconds
 
 const clickedState = [];
+//this array will be filled with false value buttons that become true as clicked
 
-// this checks to see if all clicked. If so true.
+// this checks to see if all true or clicked.
 function checkArray(arr) {
   return arr.every(function (item) {
     return item;
@@ -21,7 +22,7 @@ function checkArray(arr) {
 
 function endGame() {
   //step 1 of game
-  // to win the game ALL buttons must be green
+  // to win the game ALL buttons must be in clicked state hence true
   if (checkArray(clickedState)) {
     alert("You win");
   } else {
@@ -42,7 +43,7 @@ function toggleColor(event) {
 
   // get id
   const id = buttonId.split("-")[1];
-  // toggle clickedState value
+  // toggle clickedState value will change a false to true and vice versa
   clickedState[id] = !clickedState[id];
 }
 
@@ -62,7 +63,7 @@ function startGame() {
     seconds -= 1000;
   }, 1000);
 
-  // add buttons
+  // add buttons INITIALIZER
   for (let i = 0; i < gameButtons; i++) {
     const button = document.createElement("button");
     button.innerText = i;
@@ -74,8 +75,9 @@ function startGame() {
 
     // each button has an initial value of false and when clicked it changes to true.
     // if .every button clicked you won
+    // YOU ARE STATING IT IS FALSE TILL CLICKED
     clickedState.push(false);
-
+    // the colour toggle changes it to true
     button.addEventListener("click", toggleColor);
   }
 
